@@ -4,6 +4,10 @@
   gather_facts: false
 
   tasks:
+    - name: Skip Delete if not_delete is defined
+      ansible.builtin.meta: end_play
+      when: not_delete is defined
+
     - name: List systems to be destroyed
       ansible.builtin.debug:
         msg: "{{ inventory_hostname }}"
