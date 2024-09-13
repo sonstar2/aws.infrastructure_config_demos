@@ -15,8 +15,10 @@
           - create_vm_aws_vpc_subnet_name is defined
         fail_msg: "Required variables not set"
 
+    - name: Set create_vm_vm_name
+      set_fact:
+        create_vm_vm_name: "{{ _hosts }}"
+
     - name: Include create vm role
       ansible.builtin.include_role:
         name: lab.aws_infrastructure_config_demos.create_vm
-      vars:
-        - create_vm_vm_name: _hosts
