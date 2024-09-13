@@ -18,3 +18,5 @@
     - name: Include create vm role
       ansible.builtin.include_role:
         name: lab.aws_infrastructure_config_demos.create_vm
+      vars:
+        - create_vm_vm_name: _hosts
