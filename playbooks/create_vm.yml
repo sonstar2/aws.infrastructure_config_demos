@@ -18,6 +18,7 @@
     - name: Set create_vm_vm_name
       set_fact:
         create_vm_vm_name: "{{ _hosts }}"
+      when: _hosts is defined
 
     - name: Include create vm role
       ansible.builtin.include_role:
